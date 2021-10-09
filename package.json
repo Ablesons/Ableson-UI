@@ -27,6 +27,7 @@
   "author": "Ablesons <huangzhendong1996@outlook.com>",
   "license": "MIT",
   "devDependencies": {
-    "vue": "^2.6.14"
+    "vue": "^2.6.14",
+    "webpack": "^5.58.1"
   }
 }
