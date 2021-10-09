@@ -1,0 +1,32 @@
+{
+  "name": "ableson-ui",
+  "version": "1.0.0",
+  "description": "Vue PC端组件库",
+  "keywords": [
+    "Ableson-UI",
+    "ableson-ui",
+    "ableson",
+    "Ableson",
+    "vue",
+    "components"
+  ],
+  "main": "index.js",
+  "files": [
+    "lib",
+    "src",
+    "packages",
+    "types"
+  ],
+  "typings": "types/index.d.ts",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Ablesons/Ableson-UI.git"
+  },
+  "homepage": "{}",
+  "author": "Ablesons <huangzhendong1996@outlook.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "vue": "^2.6.14"
+  }
+}
