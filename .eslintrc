@@ -1,0 +1,50 @@
+{
+  "globals": {
+    "ga": true,
+    "chrome": true
+  },
+  "plugins": ["html", "json"],
+  "extends": "elemefe",
+  /**
+   * "off" 或 0 - 关闭规则
+   * "warn" 或 1 - 开启规则，使用警告级别的错误：warn (不会导致程序退出),
+   * "error" 或 2 - 开启规则，使用错误级别的错误：error (当被触发的时候，程序会退出)
+   */
+  "rules": {
+    // 禁用 console
+    "no-console": 0, // 关闭 禁用 console
+    "no-debugger": 0, // 关闭 禁用 debugger
+    "one-var": 0, // 连续声明
+    "no-dupe-args": 2, // 禁止 function 定义中出现重名参数
+    "no-extra-semi": 2, // 禁止不必要的分号
+    "no-extra-parens": 1, // 非必要的括号
+    "no-empty": 1, // 块语句中的内容不能为空
+    "eqeqeq": 0, // 必须使用全等
+    "no-undef": 0, // 可以 有未定义的变量
+    "eol-last": 0, // 文件以单一的换行符结束
+    "semi": 0, // 语句可以不需要分号结尾
+    "space-before-function-paren": 1,  // 函数定义时括号前面要不要有空格
+    "no-use-before-define": [1, "nofunc"], // 未定义前不能使用
+    "complexity": [1, 10], // 循环复杂度
+    "no-unused-vars": 1, // 不能有声明后未被使用的变量或参数
+    // 代码风格
+    "indent": [2, 2], // 两个空格的缩进
+    "quotes": [0, "single"], // js必须使用单引号
+    "no-else-return": 1, // 如果if语句里面有return,后面不能跟else语句
+    "no-multi-spaces": 1, // 不能用多余的空格
+    "key-spacing": [
+      1,
+      {
+        "beforeColon": false,
+        "afterColon": true
+      }
+    ], // 对象字面量中冒号的前后空格
+    "no-restricted-globals": ["error", "event", "fdescribe"]
+  },
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  }
+}
