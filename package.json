@@ -18,7 +18,9 @@
     "types"
   ],
   "typings": "types/index.d.ts",
-  "scripts": {},
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.demo.js"
+  },
   "repository": {
     "type": "git",
     "url": "git@github.com:Ablesons/Ableson-UI.git"
@@ -27,9 +29,17 @@
   "author": "Ablesons <huangzhendong1996@outlook.com>",
   "license": "MIT",
   "devDependencies": {
+    "@babel/cli": "^7.15.7",
+    "@babel/core": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "babel-loader": "^8.2.2",
+    "babel-plugin-syntax-jsx": "^6.18.0",
+    "babel-plugin-transform-vue-jsx": "^3.7.0",
+    "cross-env": "^7.0.3",
     "css-loader": "^6.3.0",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.3.2",
+    "sass-loader": "^12.2.0",
     "style-loader": "^3.3.0",
     "url-loader": "^4.1.1",
     "vue": "^2.6.14",
@@ -38,5 +48,8 @@
     "webpack": "^5.58.1",
     "webpack-cli": "^3.0.8",
     "webpack-dev-server": "^3.1.11"
+  },
+  "dependencies": {
+    "babel-helper-vue-jsx-merge-props": "^2.0.3"
   }
 }
