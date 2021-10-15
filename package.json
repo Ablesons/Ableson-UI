@@ -19,7 +19,10 @@
   ],
   "typings": "types/index.d.ts",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.demo.js"
+    "bootstrap": "yarn || npm i",
+    "clean": "rimraf lib && rimraf packages/*/lib && rimraf test/**/coverage",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.demo.js",
+    "lint": "eslint src/**/* test/**/* packages/**/* build/**/* --quiet"
   },
   "repository": {
     "type": "git",
