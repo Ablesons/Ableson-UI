@@ -42,6 +42,18 @@ export default ${ComponentName};`
   }
 </script>`
   }, {
+    filename: path.join('../../examples/docs/zh-CN', `${englishName}.scss`),
+    content: `## ${ComponentName} ${chineseName}`
+  }, {
+    filename: path.join('../../examples/docs/en-US', `${englishName}.scss`),
+    content: `## ${ComponentName}`
+  }, {
+    filename: path.join('../../examples/docs/es', `${englishName}.scss`),
+    content: `## ${ComponentName}`
+  }, {
+    filename: path.join('../../examples/docs/fr-FR', `${englishName}.scss`),
+    content: `## ${ComponentName}`
+  }, {
     filename: path.join('../../packages/theme-chalk/src', `${englishName}.scss`),
     content: `@import "mixins/mixins";
 @import "common/var";
@@ -77,6 +89,20 @@ console.log(sassImportText);
 fileSave(sassPath)
   .write(sassImportText, 'utf8')
   .end('\n');
+
+// 添加到 element-ui.d.ts
+const elementTsPath = path.join(__dirname, '../../types/index.d.ts');
+
+let elementTsText = `${fs.readFileSync(elementTsPath)}
+/** ${ComponentName} Component */
+export class ${ComponentName} extends El${ComponentName} {}`;
+
+const index = elementTsText.indexOf('export') - 1;
+const importString = `import { El${ComponentName} } from './${englishName}'`;
+
+elementTsText = elementTsText.slice(0, index) + importString + '\n' + elementTsText.slice(index);
+
+fileSave(elementTsPath).write(elementTsText, 'utf8').end('\n');
 
 // 创建 package
 Files.forEach(file => {
