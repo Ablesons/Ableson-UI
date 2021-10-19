@@ -42,16 +42,16 @@ export default ${ComponentName};`
   }
 </script>`
   }, {
-    filename: path.join('../../examples/docs/zh-CN', `${englishName}.scss`),
+    filename: path.join('../../examples/docs/zh-CN', `${englishName}.md`),
     content: `## ${ComponentName} ${chineseName}`
   }, {
-    filename: path.join('../../examples/docs/en-US', `${englishName}.scss`),
+    filename: path.join('../../examples/docs/en-US', `${englishName}.md`),
     content: `## ${ComponentName}`
   }, {
-    filename: path.join('../../examples/docs/es', `${englishName}.scss`),
+    filename: path.join('../../examples/docs/es', `${englishName}.md`),
     content: `## ${ComponentName}`
   }, {
-    filename: path.join('../../examples/docs/fr-FR', `${englishName}.scss`),
+    filename: path.join('../../examples/docs/fr-FR', `${englishName}.md`),
     content: `## ${ComponentName}`
   }, {
     filename: path.join('../../packages/theme-chalk/src', `${englishName}.scss`),
@@ -62,10 +62,10 @@ export default ${ComponentName};`
 }`
   }, {
     filename: path.join('../../types', `${englishName}.d.ts`),
-    content: `import { ElementUIComponent } from './component'
+    content: `import { AblesonUIComponent } from './component'
 
 /** ${ComponentName} Component */
-export declare class El${ComponentName} extends ElementUIComponent {
+export declare class Ab${ComponentName} extends AblesonUIComponent {
 }`
   }
 ]
@@ -83,22 +83,20 @@ fileSave(path.join(__dirname, '../../components.json'))
 
 // 添加到 index.scss
 const sassPath = path.join(__dirname, '../../packages/theme-chalk/src/index.scss');
-console.log(sassPath);
 const sassImportText = `${fs.readFileSync(sassPath)}@import "./${englishName}.scss";`;
-console.log(sassImportText);
 fileSave(sassPath)
   .write(sassImportText, 'utf8')
   .end('\n');
 
-// 添加到 element-ui.d.ts
+// 添加到 index.d.ts
 const elementTsPath = path.join(__dirname, '../../types/index.d.ts');
 
 let elementTsText = `${fs.readFileSync(elementTsPath)}
 /** ${ComponentName} Component */
-export class ${ComponentName} extends El${ComponentName} {}`;
+export class ${ComponentName} extends Ab${ComponentName} {}`;
 
 const index = elementTsText.indexOf('export') - 1;
-const importString = `import { El${ComponentName} } from './${englishName}'`;
+const importString = `import { Ab${ComponentName} } from './${englishName}'`;
 
 elementTsText = elementTsText.slice(0, index) + importString + '\n' + elementTsText.slice(index);
 
