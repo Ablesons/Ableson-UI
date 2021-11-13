@@ -61,7 +61,7 @@ module.exports = {
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
       favicon: "./examples/favicon.ico",
-      template: './examples/index.tpl',
+      template: './examples/index.html',
       filename: './index.html',
       inject: true
     })
