@@ -20,6 +20,7 @@
   "typings": "types/index.d.ts",
   "scripts": {
     "bootstrap": "yarn || npm i",
+    "build:file": "node build/bin/build-entry.js",
     "clean": "rimraf lib && rimraf packages/*/lib && rimraf test/**/coverage",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.demo.js",
     "lint": "eslint src/**/* test/**/* packages/**/* build/**/* --quiet"
@@ -53,6 +54,7 @@
     "file-loader": "^6.2.0",
     "file-save": "^0.2.0",
     "html-webpack-plugin": "^5.3.2",
+    "json-templater": "1.0.4",
     "rimraf": "^2.5.4",
     "sass-loader": "^12.2.0",
     "style-loader": "^3.3.0",
