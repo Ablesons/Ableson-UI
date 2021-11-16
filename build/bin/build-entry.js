@@ -14,8 +14,8 @@ import locale from './src/locale';
 import CollapseTransition from './src/transitions/collapse-transition';
 
 const components = [
-  CollapseTransition,
 {{install}}
+  CollapseTransition,
 ];
 
 const install = function(Vue, opts = {}) {
